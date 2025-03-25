@@ -1,4 +1,16 @@
-# SoctkPRO
+# StockPRO
+
+## Description
+- Inventory control for good management of your company and providing control of products.
+
+## Technologies 
+- React
+- React ruter dom
+- React icons
+- React hook form
+- Styled components
+- PostgreSQL
+- Supa base
 
 ## React + Vite
 
