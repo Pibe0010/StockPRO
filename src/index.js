@@ -1,7 +1,7 @@
 export { default as App } from "./App";
 export * from "./Components/Atoms/Icon.jsx";
 export * from "./Components/Molecules/Btnsave.jsx";
-/* export * from "./Components/Body/MenuHambur.jsx"; */
+export * from "./Components/Body/MenuHambur.jsx";
 export * from "./Components/Body/ToggleTheme.jsx";
 export * from "./Components/Body/Sidebar/Sidebar.jsx";
 export * from "./Components/Body/Sidebar/SidebarCard.jsx";
