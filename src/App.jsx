@@ -1,5 +1,5 @@
 import styled, { ThemeProvider } from "styled-components";
-import { MyRoutes, Light, Dark, Sidebar } from "./index.js";
+import { MyRoutes, Light, Dark, Sidebar, MenuHambur } from "./index.js";
 import { createContext, useState } from "react";
 import { device } from "./Styles/Breackpoints.jsx";
 export const ThemeContext = createContext(null);
@@ -17,7 +17,9 @@ const App = () => {
           <section className="content-sidebar">
             <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)} />
           </section>
-          <section className="content-hamburger">Menu Hambuergesa</section>
+          <section className="content-hamburger">
+            <MenuHambur />
+          </section>
           <section className="content-routes">
             <MyRoutes />
           </section>
