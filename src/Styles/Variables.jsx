@@ -12,7 +12,7 @@ import { TbBrandSupabase, TbBrandBitbucket, TbReportAnalytics } from "react-icon
 import { FaReact } from "react-icons/fa";
 import { BsArrowDown, BsArrowUpShort } from "react-icons/bs";
 import { FaBalanceScale } from "react-icons/fa";
-import logo from "../assets/inventory_2_40dp_666666_FILL0_wght400_GRAD0_opsz40.svg";
+import logo from "../assets/icons8-producto.svg";
 import { BsGoogle } from "react-icons/bs";
 import { RiCloseLine } from "react-icons/ri";
 import { BiSave } from "react-icons/bi";

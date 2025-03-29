@@ -5,11 +5,11 @@ export const BtnSave = ({ funcion, titulo, bgcolor, icono, url }) => {
     <Container type="submit" $bgcolor={bgcolor}>
       <Icono>{icono}</Icono>
 
-      <span className="btn" onClick={funcion}>
+      <button className="btn" onClick={funcion}>
         <a href={url} target="_blank">
           {titulo}
         </a>
-      </span>
+      </button>
     </Container>
   );
 };
@@ -23,28 +23,26 @@ const Container = styled.button`
   background-color: initial;
   z-index: 2;
   .btn {
-    background: ${(props) => props.$bgcolor};
-    padding: 0.6em 1.3em;
-    font-weight: 900;
+    color: #090909;
+    padding: 0.7em 1.7em;
     font-size: 18px;
-    border: 3px solid black;
-    border-radius: 0.4em;
-    box-shadow: 0.1em 0.1em #000;
-    transition: 0.2s;
-    white-space: 1px;
-    color: #000;
+    border-radius: 0.5em;
+    background: ${({ $bgcolor }) => $bgcolor};
+    cursor: pointer;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s;
+    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    font-weight: 600;
+
     a {
       text-decoration: none;
       color: #000;
     }
     cursor: pointer;
-    &:hover {
-      transform: translate(-0.05em, -0.05em);
-      box-shadow: 0.15em 0.15em #000;
-    }
+
     &:active {
-      transform: translate(0.05em, 0.05em);
-      box-shadow: 0.05em 0.05em #000;
+      color: #666;
+      box-shadow: inset 4px 4px 12px #c5c5c5, inset -4px -4px 12px #ffffff;
     }
   }
 `;

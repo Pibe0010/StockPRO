@@ -12,7 +12,7 @@ export const MenuHambur = () => {
       <Navbar>
         <section>
           <HamburgerMenu onClick={() => setClick(!click)}>
-            <label className={click ? "toggle active" : "toggle"} htmlFor="checkbox">
+            <label className={click ? "toggle active" : "toggle"}>
               <div className="bars" id="bar1"></div>
               <div className="bars" id="bar2"></div>
               <div className="bars" id="bar3"></div>
