@@ -1,9 +1,12 @@
 import styled from "styled-components";
+import { BtnSave, useAuthStore } from "../../index.js";
 
 export const HomeTemplate = () => {
+  const { signOut } = useAuthStore();
   return (
     <Container>
       <div>HomeTemplate</div>
+      <BtnSave titulo="Logout" bgcolor={"#f8f2fd"} funcion={signOut} />
     </Container>
   );
 };

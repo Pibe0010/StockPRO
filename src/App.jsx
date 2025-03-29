@@ -1,7 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
-import { MyRoutes, Light, Dark, Sidebar, MenuHambur } from "./index.js";
+import { MyRoutes, Light, Dark, Sidebar, MenuHambur, LoginPage } from "./index.js";
 import { createContext, useState } from "react";
 import { device } from "./Styles/Breackpoints.jsx";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { useLocation } from "react-router-dom";
 export const ThemeContext = createContext(null);
 
 const App = () => {
@@ -9,21 +11,31 @@ const App = () => {
   const toggleTheme = theme === "light" ? "light" : "dark";
   const themeStyle = toggleTheme === "light" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const { pathname } = useLocation();
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <ThemeProvider theme={themeStyle}>
-        <Container className={sidebarOpen ? "active" : ""}>
-          <section className="content-sidebar">
-            <Sidebar state={sidebarOpen} setState={() => setSidebarOpen(!sidebarOpen)} />
-          </section>
-          <section className="content-hamburger">
-            <MenuHambur />
-          </section>
-          <section className="content-routes">
-            <MyRoutes />
-          </section>
-        </Container>
+        {pathname === "/login" ? (
+          <LoginPage />
+        ) : (
+          <Container className={sidebarOpen ? "active" : ""}>
+            <section className="content-sidebar">
+              <Sidebar
+                state={sidebarOpen}
+                setState={() => setSidebarOpen(!sidebarOpen)}
+              />
+            </section>
+            <section className="content-hamburger">
+              <MenuHambur />
+            </section>
+            <section className="content-routes">
+              <MyRoutes />
+            </section>
+          </Container>
+        )}
+
+        <ReactQueryDevtools initialIsOpen={false} />
       </ThemeProvider>
     </ThemeContext.Provider>
   );

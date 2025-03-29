@@ -1,9 +1,11 @@
 # StockPRO
 
 ## Description
+
 - Inventory control for good management of your company and providing control of products.
 
-## Technologies 
+## Technologies
+
 - React
 - React ruter dom
 - React icons
@@ -11,6 +13,9 @@
 - Styled components
 - PostgreSQL
 - Supa base
+- Zustand
+- Tan stack query
+- Devtools tan stack query
 
 ## React + Vite
 
