@@ -1,21 +1,21 @@
 import { v } from "../Styles/Variables.jsx";
 import { AiOutlineHome, AiOutlineSetting } from "react-icons/ai";
 
-export const DesplegableUser = [
+export const UserDropDown = [
   {
     text: "MY Profile",
     icono: <v.iconoUser />,
-    tipo: "miperfil",
+    tipo: "myprofile",
   },
   {
     text: "Settings",
     icono: <v.iconoSettings />,
-    tipo: "configuracion",
+    tipo: "settings",
   },
   {
     text: "Logout",
     icono: <v.iconoCerrarSesion />,
-    tipo: "cerrarsesion",
+    tipo: "logout",
   },
 ];
 

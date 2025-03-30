@@ -23,3 +23,6 @@ export * from "./Hooks/ProtectedRoute.jsx";
 export * from "./Components/Body/Forms/InputText.jsx";
 export * from "./Components/Body/FooterLogin.jsx";
 export * from "./Components/Body/Forms/RegisterAdmin.jsx";
+export * from "./Components/Molecules/BtnCircular.jsx";
+export * from "./Components/Body/Header.jsx";
+export * from "./Components/Body/DropDownList.jsx";
