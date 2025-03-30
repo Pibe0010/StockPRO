@@ -5,11 +5,11 @@ export const BtnSave = ({ funcion, titulo, bgcolor, icono, url }) => {
     <Container type="submit" $bgcolor={bgcolor}>
       <Icono>{icono}</Icono>
 
-      <button className="btn" onClick={funcion}>
+      <span className="btn" onClick={funcion}>
         <a href={url} target="_blank">
           {titulo}
         </a>
-      </button>
+      </span>
     </Container>
   );
 };
