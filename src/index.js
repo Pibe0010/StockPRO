@@ -26,3 +26,6 @@ export * from "./Components/Body/Forms/RegisterAdmin.jsx";
 export * from "./Components/Molecules/BtnCircular.jsx";
 export * from "./Components/Body/Header.jsx";
 export * from "./Components/Body/DropDownList.jsx";
+export * from "./Components/Atoms/Title.jsx";
+export * from "./Components/Body/BannerCompany.jsx";
+export * from "./Components/Molecules/CompanyCardData.jsx";

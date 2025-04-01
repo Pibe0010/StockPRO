@@ -27,7 +27,7 @@ const Container = styled.div`
     --switch-height: 10px;
     /* circle */
     --circle-diameter: 32px;
-    --circle-bg: rgb(232, 89, 15);
+    --circle-bg: #d70000;
     --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
   }
 
