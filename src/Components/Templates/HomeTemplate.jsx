@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Header } from "../../index.js";
+import { BannerCompany, Header, Title } from "../../index.js";
 import { useState } from "react";
 
 export const HomeTemplate = () => {
@@ -10,35 +10,37 @@ export const HomeTemplate = () => {
       <header className="header">
         <Header stateConfig={{ state: state, setState: () => setState(!state) }} />
       </header>
-      <section className="area_one"></section>
-      <section className="area_two"></section>
-      <main className="main"></main>
+      <section className="area_one">
+        <Title>My company</Title>
+      </section>
+      <main className="main">
+        <BannerCompany />
+      </main>
     </Container>
   );
 };
 const Container = styled.div`
+  position: relative;
+  overflow: hidden;
   display: grid;
   padding: 15px;
   grid-template:
     "header" 100px
     "area_one" 100px
-    "area_two" 100px
     "main" auto;
   .header {
     grid-area: header;
-    background-color: rgba(103, 83, 241, 0.14);
+    display: flex;
+    align-items: center;
   }
   .area_one {
     grid-area: area_one;
-    background-color: rgba(2293, 83, 241, 0.14);
-  }
-  .area_two {
-    grid-area: area_two;
-    background-color: rgba(77, 237, 106, 0.14);
+    display: flex;
+    align-items: center;
+    justify-content: end;
   }
   .main {
     grid-area: main;
-    background-color: rgba(255, 0, 0, 0.14);
   }
   height: 100vh;
   width: 100%;
