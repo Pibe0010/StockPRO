@@ -29,3 +29,8 @@ export * from "./Components/Body/DropDownList.jsx";
 export * from "./Components/Atoms/Title.jsx";
 export * from "./Components/Body/BannerCompany.jsx";
 export * from "./Components/Molecules/CompanyCardData.jsx";
+export * from "./Supabase/GlobalSupaBase.jsx";
+export * from "./Components/Molecules/SpinnerLoader.jsx";
+export * from "./Components/Molecules/ErrorPage.jsx";
+export * from "./Store/CompanyStore.jsx";
+export * from "./Supabase/CrudCompany.jsx";
