@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { InsertUser } from "../Supabase/CrudUser.jsx";
+import { addUsers, InsertUser } from "../Supabase/CrudUser.jsx";
 import { supabase } from "../Supabase/supabase.config.jsx";
 
 export const UserStore = create((set, get) => ({
@@ -17,5 +17,12 @@ export const UserStore = create((set, get) => ({
       role: "admin",
     });
     return userData;
+  },
+
+  idUser: 0,
+  addUsers: async () => {
+    const response = await addUsers();
+    set({ idUser: response.id });
+    return response;
   },
 }));

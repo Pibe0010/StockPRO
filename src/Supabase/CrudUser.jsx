@@ -1,5 +1,5 @@
 import Swal from "sweetalert2";
-import { supabase } from "../index.js";
+import { AddIdAuthSupaBase, supabase } from "../index.js";
 
 export const InsertUser = async (params) => {
   const { data, error } = await supabase
@@ -15,6 +15,19 @@ export const InsertUser = async (params) => {
       text: "Error to register user!" + error.message,
     });
   }
+  if (data) {
+    return data;
+  }
+};
+
+export const addUsers = async () => {
+  const idAuthSupaBase = await AddIdAuthSupaBase();
+  const { data } = await supabase
+    .from("user")
+    .select()
+    .eq("id_auth", idAuthSupaBase)
+    .maybeSingle();
+
   if (data) {
     return data;
   }

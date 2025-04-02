@@ -1,12 +1,13 @@
 import styled from "styled-components";
-import { v } from "../../Styles/Variables.jsx";
-import { CompanyCardData } from "../../index.js";
+import { CompanyCardData, v } from "../../index.js";
 
 export const BannerCompany = () => {
   return (
     <Container>
       <div className="content_wrapper_context">
-        <span className="title">{<v.iconoempresa />} Name company</span>
+        <span className="title">
+          Name company <v.iconoempresa />
+        </span>
         <div className="content-text"> StockPro always keeps you informed. </div>
         <ContentCard>
           <CompanyCardData title="Currency" value="€/." img="" />
@@ -91,19 +92,21 @@ const Container = styled.div`
   align-items: center;
   justify-content: center;
   border: 0 solid #6b6b6b;
-  background_size: contain;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat, repeat;
   border-radius: 14px;
   overflow: hidden;
   trasition: all 0.2s ease-in-out;
   .cuadros {
+    will-change: transform, opacity;
     transition: cubic-bezier(0.4, 0, 0.2, 1) 0.6s;
     position: absolute;
     height: 100%;
     width: 100%;
   }
   .content-svg {
+    will-change: transform, opacity;
     transition: cubic-bazier(0.4, 0, 0.2, 1) 0.6s;
     position: absolute;
     height: 100%;
