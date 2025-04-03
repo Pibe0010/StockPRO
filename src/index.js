@@ -34,3 +34,7 @@ export * from "./Components/Molecules/SpinnerLoader.jsx";
 export * from "./Components/Molecules/ErrorPage.jsx";
 export * from "./Store/CompanyStore.jsx";
 export * from "./Supabase/CrudCompany.jsx";
+export * from "./Components/Templates/SettingsTemplate.jsx";
+export * from "./Pages/SettingsPage.jsx";
+export * from "./Components/Templates/BrandTemplate.jsx";
+export * from "./Pages/BrandPege.jsx";

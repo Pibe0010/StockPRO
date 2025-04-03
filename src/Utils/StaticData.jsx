@@ -34,14 +34,14 @@ export const LinksArray = [
   {
     label: "Reports",
     icon: <v.iconoreportes />,
-    to: "/reportes",
+    to: "/reports",
   },
 ];
 export const SecondarylinksArray = [
   {
     label: "Settings",
     icon: <AiOutlineSetting />,
-    to: "/configurar",
+    to: "/settings",
   },
 ];
 //temas
@@ -57,37 +57,37 @@ export const TemasData = [
 ];
 
 //data configuracion
-export const DataModulosConfiguracion = [
+export const SettingsDataModules = [
   {
-    title: "Productos",
-    subtitle: "registra tus productos",
+    title: "Products",
+    subtitle: "Register your products",
     icono: "https://i.ibb.co/85zJ6yG/caja-del-paquete.png",
-    link: "/configurar/productos",
+    link: "/settings/products",
   },
   {
-    title: "Personal",
-    subtitle: "ten el control de tu personal",
+    title: "Staff",
+    subtitle: "have control of your staff",
     icono: "https://i.ibb.co/5vgZ0fX/hombre.png",
-    link: "/configurar/usuarios",
+    link: "/settings/users",
   },
 
   {
-    title: "Tu empresa",
-    subtitle: "configura tus opciones básicas",
+    title: "My company",
+    subtitle: "Configure your basic options",
     icono: "https://i.ibb.co/x7mHPgm/administracion-de-empresas.png",
-    link: "/configurar/empresa",
+    link: "/settings/company",
   },
   {
-    title: "Categoria de productos",
-    subtitle: "asigna categorias a tus productos",
+    title: "Products category",
+    subtitle: "Assign categories to your products",
     icono: "https://i.ibb.co/VYbMRLZ/categoria.png",
-    link: "/configurar/categorias",
+    link: "/settings/category",
   },
   {
-    title: "Marca de productos",
-    subtitle: "gestiona tus marcas",
+    title: "Products brand",
+    subtitle: "Manage your brands",
     icono: "https://i.ibb.co/1qsbCRb/piensa-fuera-de-la-caja.png",
-    link: "/configurar/marca",
+    link: "/settings/brand",
   },
 ];
 //tipo usuario

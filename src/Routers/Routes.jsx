@@ -1,10 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import {
+  BrandPege,
   CompanyStore,
   ErrorPage,
   HomePage,
   LoginPage,
   ProtectedRoute,
+  SettingsPage,
   UserAuth,
   UserStore,
 } from "../index.js";
@@ -43,6 +45,8 @@ export const MyRoutes = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route element={<ProtectedRoute user={user} redirectTo="/login" />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/settings" element={<SettingsPage />} />
+        <Route path="/settings/brand" element={<BrandPege />} />
       </Route>
     </Routes>
   );
