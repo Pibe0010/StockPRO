@@ -1,17 +1,23 @@
 import styled from "styled-components";
-import { CompanyCardData, v } from "../../index.js";
+import { CompanyCardData, CompanyStore, v } from "../../index.js";
 
 export const BannerCompany = () => {
+  const { dataCompany, counterUserData } = CompanyStore();
+
   return (
     <Container>
       <div className="content_wrapper_context">
         <span className="title">
-          Name company <v.iconoempresa />
+          <v.iconoempresa /> {dataCompany.company?.name}
         </span>
         <div className="content-text"> StockPro always keeps you informed. </div>
         <ContentCard>
-          <CompanyCardData title="Currency" value="€/." img="" />
-          <CompanyCardData title="Users" value="100" img="" />
+          <CompanyCardData
+            title="Currency"
+            value={dataCompany.company?.currency}
+            img=""
+          />
+          <CompanyCardData title="All Users" value={counterUserData} img="" />
         </ContentCard>
       </div>
       <div className="content-svg">
