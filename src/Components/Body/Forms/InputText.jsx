@@ -73,7 +73,7 @@ const Container = styled.div`
     padding-bottom: 6px;
     font-weight: 700;
     border-width: 1px;
-    border-image: linear-gradient(to right, #ec580e, #f23505);
+    border-image: linear-gradient(to right, #d70000, #f23505);
     border-image-slice: 1;
   }
 
@@ -83,7 +83,7 @@ const Container = styled.div`
     display: block;
     transition: 0.2s;
     font-size: 17px;
-    color: #f9632c;
+    color: #d70000;
     font-weight: 700;
   }
 

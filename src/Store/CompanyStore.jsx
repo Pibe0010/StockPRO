@@ -6,8 +6,8 @@ export const CompanyStore = create((set, get) => ({
   dataCompany: [],
   addCompany: async (params) => {
     const response = await AddCompany(params);
-    set({ dataCompany: response || [] });
-    return response ?? null;
+    set({ dataCompany: response.company || [] });
+    return response.company ?? null;
   },
   userCounter: async (params) => {
     const response = await UserCounter(params);
