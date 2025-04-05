@@ -31,7 +31,7 @@ const Container = styled.button`
     cursor: pointer;
     border: 1px solid #e8e8e8;
     transition: all 0.3s;
-    box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+    box-shadow: 1px 1px 2px #c5c5c5, -1px -1px 2px #ffffff;
     font-weight: 600;
 
     a {

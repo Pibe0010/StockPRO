@@ -15,6 +15,7 @@
 - Supa base
 - Zustand
 - Tan stack query
+- Tan stack query table
 - Devtools tan stack query
 
 ## React + Vite
