@@ -25,6 +25,6 @@ const Container = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   @media (max-width: 48em) {
-    justify-content: end;
+    justify-content: flex-start;
   }
 `;

@@ -7,11 +7,15 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import styled from "styled-components";
-import { BrandStore, ContentActionsTable, v } from "../../../index.js";
+import { BrandStore, ContentActionsTable, Pagination, v } from "../../../index.js";
 import Swal from "sweetalert2";
+import { CgArrowsExchangeAltV } from "react-icons/cg";
+import { TiArrowSortedDown, TiArrowSortedUp } from "react-icons/ti";
+import { useState } from "react";
 
 export const BrandTable = ({ data, setOpenRegister, setDataSelect, setAction }) => {
   const { deleteBrand } = BrandStore();
+  const [pages, setPages] = useState(1);
 
   const updateTable = (data) => {
     if (data.description === "Generic") {
@@ -57,11 +61,16 @@ export const BrandTable = ({ data, setOpenRegister, setDataSelect, setAction }) 
     {
       accessorKey: "description",
       header: "Description",
-      cell: (info) => <p>{info.getValue()}</p>,
+      cell: (info) => (
+        <div className="contentCell" data-title="Description">
+          <span>{info.getValue()}</span>
+        </div>
+      ),
     },
     {
       accessorKey: "actions",
       header: "",
+      enableSorting: false,
       cell: (info) => (
         <div className="contentCell">
           <ContentActionsTable
@@ -88,7 +97,22 @@ export const BrandTable = ({ data, setOpenRegister, setDataSelect, setAction }) 
           {table.getHeaderGroups().map((headerGroup) => (
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
-                <th key={header.id}>{header.column.columnDef.header}</th>
+                <th key={header.id}>
+                  {header.column.columnDef.header}
+                  {header.column.getCanSort() && (
+                    <span>
+                      <CgArrowsExchangeAltV
+                        className="iconArrows"
+                        onClick={header.column.getToggleSortingHandler()}
+                      />
+                    </span>
+                  )}
+                  {
+                    { asc: <TiArrowSortedUp />, desc: <TiArrowSortedDown /> }[
+                      header.column.getIsSorted()
+                    ]
+                  }
+                </th>
               ))}
             </tr>
           ))}
@@ -105,6 +129,13 @@ export const BrandTable = ({ data, setOpenRegister, setDataSelect, setAction }) 
           ))}
         </tbody>
       </table>
+      <Pagination
+        table={table}
+        initialPage={() => table.setPageIndex(0)}
+        pageSize={table.getState().pagination.pageIndex + 1}
+        setPage={setPages}
+        maxPeges={table.getPageCount()}
+      />
     </Container>
   );
 };
@@ -151,6 +182,12 @@ const Container = styled.div`
         color: ${({ theme }) => theme.text};
         &:first-of-type {
           text-align: center;
+        }
+        .iconArrows {
+          cursor: pointer;
+          margin-left: 5px;
+          width: 20px;
+          height: 20px;
         }
       }
     }
@@ -216,7 +253,7 @@ const Container = styled.div`
           color: ${({ theme }) => theme.text};
         }
       }
-      .ContentCell {
+      .contentCell {
         text-align: right;
         display: flex;
         justify-content: space-between;
@@ -236,7 +273,7 @@ const Container = styled.div`
           text-align: center;
         }
       }
-      td[data-title]:before {
+      div[data-title]:before {
         content: attr(data-title);
         float: left;
         font-size: 0.8em;

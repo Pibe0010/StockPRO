@@ -65,7 +65,6 @@ export const BrandTemplate = ({ data }) => {
 };
 const Container = styled.div`
   position: relative;
-  overflow: hidden;
   display: grid;
   padding: 15px;
   grid-template:
@@ -92,8 +91,9 @@ const Container = styled.div`
   .main {
     grid-area: main;
   }
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
+  overflow: hidden;
   background-color: ${(props) => props.theme.bgtotal};
   color: ${({ theme }) => theme.text};
 `;
