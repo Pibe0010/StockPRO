@@ -48,3 +48,4 @@ export * from "./Utils/Conversions.jsx";
 export * from "./Components/Molecules/BtnFilter.jsx";
 export * from "./Components/Atoms/ContentFilter.jsx";
 export * from "./Components/Body/Search.jsx";
+export * from "./Components/Body/Tables/Pagination.jsx";
