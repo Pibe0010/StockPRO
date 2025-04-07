@@ -9,6 +9,7 @@ import {
   SettingsPage,
   UserAuth,
   UserStore,
+  CategoryPage,
 } from "../index.js";
 import { useQuery } from "@tanstack/react-query";
 import SpinnerLoader from "../Components/Molecules/SpinnerLoader.jsx";
@@ -47,6 +48,7 @@ export const MyRoutes = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/settings" element={<SettingsPage />} />
         <Route path="/settings/brand" element={<BrandPege />} />
+        <Route path="/settings/category" element={<CategoryPage />} />
       </Route>
     </Routes>
   );
