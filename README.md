@@ -16,6 +16,7 @@
 - Zustand
 - Tan stack query
 - Tan stack query table
+- React color
 - Devtools tan stack query
 
 ## React + Vite
