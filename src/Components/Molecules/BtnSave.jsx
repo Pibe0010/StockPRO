@@ -24,7 +24,7 @@ const Container = styled.button`
   z-index: 2;
   .btn {
     color: #090909;
-    padding: 0.7em 1.7em;
+    padding: 0.4em 1.7em;
     font-size: 18px;
     border-radius: 0.5em;
     background: ${({ $bgcolor }) => $bgcolor};
