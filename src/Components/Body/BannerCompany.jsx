@@ -8,15 +8,11 @@ export const BannerCompany = () => {
     <Container>
       <div className="content_wrapper_context">
         <span className="title">
-          <v.iconoempresa /> {dataCompany.company?.name}
+          <v.iconoempresa /> {dataCompany?.name}
         </span>
         <div className="content-text"> StockPro always keeps you informed. </div>
         <ContentCard>
-          <CompanyCardData
-            title="Currency"
-            value={dataCompany.company?.currency}
-            img=""
-          />
+          <CompanyCardData title="Currency" value={dataCompany?.currency} img="" />
           <CompanyCardData title="All Users" value={counterUserData} img="" />
         </ContentCard>
       </div>
