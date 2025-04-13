@@ -91,28 +91,28 @@ export const SettingsDataModules = [
   },
 ];
 //tipo usuario
-export const TipouserData = [
+export const TypeUserData = [
   {
-    descripcion: "empleado",
-    icono: "🪖",
+    description: "employer",
+    icon: "🪖",
   },
   {
-    descripcion: "administrador",
-    icono: "👑",
+    description: "admin",
+    icon: "👑",
   },
 ];
 //tipodoc
-export const TipoDocData = [
+export const DocTypeData = [
   {
-    descripcion: "Dni",
-    icono: "🪖",
+    description: "Personal number",
+    icon: "🪖",
   },
   {
-    descripcion: "Libreta electoral",
-    icono: "👑",
+    description: "Electoral booklet",
+    icon: "👑",
   },
   {
-    descripcion: "Otros",
+    description: "Others",
     icono: "👑",
   },
 ];
