@@ -37,7 +37,7 @@ const Container = styled.div`
   border-radius: 10px;
   gap: 10px;
   z-index: 3;
-  height: 230px;
+  /* height: 230px; */
   @media ${device.tablet} {
     width: 400px;
   }
