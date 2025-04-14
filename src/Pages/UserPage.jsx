@@ -1,10 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import { CompanyStore, ErrorPage, UserStore, UserTemplate } from "../index.js";
+import { BlockPage, CompanyStore, ErrorPage, UserStore, UserTemplate } from "../index.js";
 import SpinnerLoader from "../Components/Molecules/SpinnerLoader.jsx";
 
 export const UserPage = () => {
   const { dataCompany } = CompanyStore();
-  const { addModule, dataUser, addAllUser, searchUser, search } = UserStore();
+  const { addModule, dataUser, addAllUser, searchUser, search, dataPermits } =
+    UserStore();
 
   const { isLoading, error } = useQuery({
     queryKey: ["add user", { _id_company: dataCompany?.id }],
@@ -22,6 +23,10 @@ export const UserPage = () => {
     queryKey: ["add module"],
     queryFn: addModule,
   });
+
+  const statePermits = dataPermits.some((obj) => obj.modules.name.includes("Empleyers"));
+
+  if (statePermits === false) return <BlockPage state={statePermits} />;
 
   if (isLoading) return <SpinnerLoader />;
 

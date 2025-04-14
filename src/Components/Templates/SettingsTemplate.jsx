@@ -2,6 +2,7 @@ import styled from "styled-components";
 import fondocuadros from "../../assets/fondocuadros.svg";
 import { Link } from "react-router-dom";
 import { SettingsDataModules } from "../../Utils/StaticData.jsx";
+import { Message } from "../../index.js";
 
 export function SettingsTemplate() {
   return (
@@ -10,10 +11,12 @@ export function SettingsTemplate() {
         {SettingsDataModules.map((item, index) => {
           return (
             <Link
-              to={item.link}
+              to={item.state ? item.link : "#"}
               className={item.state ? "card" : "card false"}
               key={index}
             >
+              <Message state={item.state} />
+
               <div className="card-content">
                 <div className="card-image">
                   <img src={item.icono} alt="Icon item" />
@@ -211,6 +214,7 @@ const Container = styled.div`
     #cards {
       max-width: 1000px;
       padding: 10px 0px;
+      margin: auto;
     }
 
     .card {

@@ -1,10 +1,18 @@
 import { useQuery } from "@tanstack/react-query";
-import { BrandStore, BrandTemplate, CompanyStore, ErrorPage } from "../index.js";
+import {
+  BlockPage,
+  BrandStore,
+  BrandTemplate,
+  CompanyStore,
+  ErrorPage,
+  UserStore,
+} from "../index.js";
 import SpinnerLoader from "../Components/Molecules/SpinnerLoader.jsx";
 
 export const BrandPege = () => {
   const { addBrand, dataBrand, searchBrand, search } = BrandStore();
   const { dataCompany } = CompanyStore();
+  const { dataPermits } = UserStore();
 
   const { isLoading, error } = useQuery({
     queryKey: ["add brand", { idCompany: dataCompany?.id }],
@@ -17,6 +25,12 @@ export const BrandPege = () => {
     queryFn: () => searchBrand({ id_company: dataCompany.id, description: search }),
     enabled: dataCompany.id != null,
   });
+
+  const statePermits = dataPermits.some((obj) =>
+    obj.modules.name.includes("Brand products")
+  );
+
+  if (statePermits === false) return <BlockPage state={statePermits} />;
 
   if (isLoading) return <SpinnerLoader />;
 
