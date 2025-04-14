@@ -24,7 +24,7 @@ export const UserPage = () => {
     queryFn: addModule,
   });
 
-  const statePermits = dataPermits.some((obj) => obj.modules.name.includes("Empleyers"));
+  const statePermits = dataPermits.some((obj) => obj.modules.name.includes("Employers"));
 
   if (statePermits === false) return <BlockPage state={statePermits} />;
 
