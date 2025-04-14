@@ -9,6 +9,7 @@ import {
   InsertPermits,
   InsertUser,
   SearchUser,
+  SettingsDataModules,
   UpdateUser,
 } from "../index.js";
 import { supabase } from "../Supabase/supabase.config.jsx";
@@ -134,6 +135,24 @@ export const UserStore = create((set, get) => ({
   addPermits: async (params) => {
     const response = await AddPermits(params);
     set({ dataPermits: response || [] });
+
+    let alldocs = [];
+
+    SettingsDataModules.forEach((element) => {
+      const statePermits = response.some((obj) =>
+        obj.modules.name.includes(element.title)
+      );
+
+      if (statePermits) {
+        alldocs.push({ ...element, state: true });
+      } else {
+        alldocs.push({ ...element, state: false });
+      }
+    });
+    console.log(SettingsDataModules);
+    SettingsDataModules.splice(0, SettingsDataModules.length);
+    SettingsDataModules.push(...alldocs);
+
     return response;
   },
 

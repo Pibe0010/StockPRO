@@ -73,3 +73,5 @@ export * from "./Supabase/CrudUser.jsx";
 export * from "./Components/Body/Forms/RegisterUser.jsx";
 export * from "./Components/Body/ListModules.jsx";
 export * from "./Components/Body/Tables/UsersTable.jsx";
+export * from "./Components/Molecules/Message.jsx";
+export * from "./Components/Molecules/BlockPage.jsx";
