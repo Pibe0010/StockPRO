@@ -65,7 +65,7 @@ export const SettingsDataModules = [
     link: "/settings/products",
   },
   {
-    title: "Staff",
+    title: "Employers",
     subtitle: "have control of your staff",
     icono: "https://i.ibb.co/5vgZ0fX/hombre.png",
     link: "/settings/users",
@@ -78,13 +78,13 @@ export const SettingsDataModules = [
     link: "/settings/company",
   },
   {
-    title: "Products category",
+    title: "Category products",
     subtitle: "Assign categories to your products",
     icono: "https://i.ibb.co/VYbMRLZ/categoria.png",
     link: "/settings/category",
   },
   {
-    title: "Products brand",
+    title: "Brand products",
     subtitle: "Manage your brands",
     icono: "https://i.ibb.co/1qsbCRb/piensa-fuera-de-la-caja.png",
     link: "/settings/brand",

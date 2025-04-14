@@ -27,7 +27,7 @@ export const UserStore = create((set, get) => ({
     const userData = await InsertUser({
       id_auth: data.user.id,
       created_at: new Date(),
-      role: "admin",
+      role: "superAdmin",
     });
     return userData;
   },
@@ -149,7 +149,7 @@ export const UserStore = create((set, get) => ({
         alldocs.push({ ...element, state: false });
       }
     });
-    console.log(SettingsDataModules);
+
     SettingsDataModules.splice(0, SettingsDataModules.length);
     SettingsDataModules.push(...alldocs);
 

@@ -27,7 +27,7 @@ export const CategoryPage = () => {
   });
 
   const statePermits = dataPermits.some((obj) =>
-    obj.modules.name.includes("Category produsts")
+    obj.modules.name.includes("Category products")
   );
 
   if (statePermits === false) return <BlockPage state={statePermits} />;
