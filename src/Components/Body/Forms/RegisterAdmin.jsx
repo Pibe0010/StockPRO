@@ -21,7 +21,6 @@ export const RegisterAdmin = ({ setState }) => {
       const params = {
         email: data.email,
         password: data.password,
-        role: "superAdmin",
       };
       const addData = await insertUserAdmin(params);
       if (addData) {
