@@ -93,7 +93,6 @@ export const UserStore = create((set, get) => ({
       }
     });
     await supabase.auth.signOut();
-    return data.user;
   },
 
   deleteUser: async (params) => {
@@ -104,6 +103,7 @@ export const UserStore = create((set, get) => ({
   updateUser: async (params, dataCheckPermits, id_company) => {
     await UpdateUser(params);
     await DeletePermits({ id_user: params.id });
+
     dataCheckPermits.forEach(async (item) => {
       if (item.check) {
         let permitsParams = {

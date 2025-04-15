@@ -5,11 +5,11 @@ export const HomePage = () => {
   const { userCounter, dataCompany } = CompanyStore();
 
   const { data } = useQuery({
-    queryKey: ["Counter users company", { idCompany: dataCompany.company?.id }],
+    queryKey: ["Counter users company", { idCompany: dataCompany?.id }],
     queryFn: () => {
-      return userCounter({ id_company: dataCompany.company?.id });
+      return userCounter({ id_company: dataCompany?.id });
     },
-    enabled: !!dataCompany.company?.id,
+    enabled: !!dataCompany?.id,
   });
 
   return <HomeTemplate />;
