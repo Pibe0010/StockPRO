@@ -12,6 +12,7 @@ import {
   CategoryPage,
   ProductPage,
   UserPage,
+  KardexPege,
 } from "../index.js";
 import { useQuery } from "@tanstack/react-query";
 import SpinnerLoader from "../Components/Molecules/SpinnerLoader.jsx";
@@ -62,6 +63,7 @@ export const MyRoutes = () => {
         <Route path="/settings/category" element={<CategoryPage />} />
         <Route path="/settings/products" element={<ProductPage />} />
         <Route path="/settings/users" element={<UserPage />} />
+        <Route path="/kardex" element={<KardexPege />} />
       </Route>
     </Routes>
   );
