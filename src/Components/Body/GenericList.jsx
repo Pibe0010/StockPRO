@@ -12,7 +12,7 @@ export const GenericList = ({ data, setState, handlerFunction, scroll, bottom })
     <Container $scroll={scroll} $bottom={bottom}>
       <BtnClose handlerCloseFunction={setState} />
       <section className="content-items">
-        {data.map((item, index) => {
+        {data?.map((item, index) => {
           return (
             <ItemContainer key={index} onClick={() => addSelection(item)}>
               <span>💎</span>

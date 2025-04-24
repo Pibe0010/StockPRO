@@ -1,10 +1,14 @@
 import { create } from "zustand";
 import {
   AddProduct,
+  AllReportStock,
+  AllReportStockProducts,
   DeleteProduct,
   InsertProduct,
   SearchProduct,
   UpdateProduct,
+  ReportMinStockProducts,
+  ReportKardexEntrysAndExits,
 } from "../index.js";
 
 export const ProductStore = create((set, get) => ({
@@ -47,5 +51,26 @@ export const ProductStore = create((set, get) => ({
   searchProduct: async (params) => {
     const response = await SearchProduct(params);
     set({ dataProduct: response || [] });
+    return response || [];
+  },
+
+  allReportStock: async (params) => {
+    const response = await AllReportStock(params);
+    return response || [];
+  },
+
+  allReportStockProduct: async (params) => {
+    const response = await AllReportStockProducts(params);
+    return response || [];
+  },
+
+  reportMinStockProducts: async (params) => {
+    const response = await ReportMinStockProducts(params);
+    return response || [];
+  },
+
+  reportKardexEntrysAndExits: async (params) => {
+    const response = await ReportKardexEntrysAndExits(params);
+    return response || [];
   },
 }));

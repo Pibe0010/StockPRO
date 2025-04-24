@@ -1,16 +1,27 @@
 import styled from "styled-components";
 import { FaSearch } from "react-icons/fa";
 
-export const Search = ({ setSearch }) => {
+export const Search = ({ setSearch, onfocus, handlerFunction }) => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
 
+  const activeFunction = () => {
+    if (handlerFunction) {
+      handlerFunction();
+    }
+  };
+
   return (
-    <Container>
+    <Container onClick={activeFunction}>
       <article className="content">
         <FaSearch className="icon" />
-        <input type="text" onChange={handleSearch} placeholder="Search" />
+        <input
+          type="text"
+          onChange={handleSearch}
+          placeholder="Search"
+          onFocus={onfocus}
+        />
       </article>
     </Container>
   );
