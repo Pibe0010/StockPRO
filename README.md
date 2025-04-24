@@ -18,6 +18,7 @@
 - Tan stack query table
 - React color
 - Devtools tan stack query
+- Raect pdf
 
 ## React + Vite
 

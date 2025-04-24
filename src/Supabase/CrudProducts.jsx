@@ -55,3 +55,43 @@ export const SearchProduct = async (params) => {
 
   return data ?? [];
 };
+
+// Reports
+export const AllReportStock = async (params) => {
+  const { data, error } = await supabase
+    .from("products")
+    .select()
+    .eq("id_company", params.id_company);
+
+  if (error) return [];
+
+  return data ?? [];
+};
+
+export const AllReportStockProducts = async (params) => {
+  const { data, error } = await supabase
+    .from("products")
+    .select()
+    .eq("id_company", params.id_company)
+    .eq("id", params.id);
+
+  if (error) return [];
+
+  return data ?? [];
+};
+
+export const ReportMinStockProducts = async (params) => {
+  const { data, error } = await supabase.rpc("report_stock_product_min", params);
+
+  if (error) return [];
+
+  return data ?? [];
+};
+
+export const ReportKardexEntrysAndExits = async (params) => {
+  const { data, error } = await supabase.rpc("add_company_kardex", params);
+
+  if (error) return [];
+
+  return data ?? [];
+};

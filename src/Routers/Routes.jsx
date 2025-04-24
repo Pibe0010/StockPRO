@@ -13,9 +13,14 @@ import {
   ProductPage,
   UserPage,
   KardexPege,
+  ReportPage,
 } from "../index.js";
 import { useQuery } from "@tanstack/react-query";
 import SpinnerLoader from "../Components/Molecules/SpinnerLoader.jsx";
+import AllStock from "../Components/Body/Reports/AllStock.jsx";
+import AllStockProduct from "../Components/Body/Reports/AllStockProduct.jsx";
+import MinStockProduct from "../Components/Body/Reports/MinStockProduct.jsx";
+import KardexEntryAndExit from "../Components/Body/Reports/KardexEntryAndExit.jsx";
 
 export const MyRoutes = () => {
   const { user } = UserAuth();
@@ -64,6 +69,12 @@ export const MyRoutes = () => {
         <Route path="/settings/products" element={<ProductPage />} />
         <Route path="/settings/users" element={<UserPage />} />
         <Route path="/kardex" element={<KardexPege />} />
+        <Route path="/reports" element={<ReportPage />}>
+          <Route path="all-stock" element={<AllStock />} />
+          <Route path="current-stock-product" element={<AllStockProduct />} />
+          <Route path="min-stock" element={<MinStockProduct />} />
+          <Route path="current-kardex" element={<KardexEntryAndExit />} />
+        </Route>
       </Route>
     </Routes>
   );
