@@ -19,6 +19,10 @@ export const ReportTemplate = () => {
             <SidebarTitle>Entry and exit</SidebarTitle>
             <SidebarItems to="current-kardex">By product</SidebarItems>
           </SidebarSection>
+          <SidebarSection>
+            <SidebarTitle>Stock valuation</SidebarTitle>
+            <SidebarItems to="inventory-valued">All valued</SidebarItems>
+          </SidebarSection>
         </Sidebar>
       </PageContent>
     </Container>
