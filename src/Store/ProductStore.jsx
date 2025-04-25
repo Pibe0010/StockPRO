@@ -9,6 +9,7 @@ import {
   UpdateProduct,
   ReportMinStockProducts,
   ReportKardexEntrysAndExits,
+  ReportInventoryValued,
 } from "../index.js";
 
 export const ProductStore = create((set, get) => ({
@@ -71,6 +72,11 @@ export const ProductStore = create((set, get) => ({
 
   reportKardexEntrysAndExits: async (params) => {
     const response = await ReportKardexEntrysAndExits(params);
+    return response || [];
+  },
+
+  reportInventoryValued: async (params) => {
+    const response = await ReportInventoryValued(params);
     return response || [];
   },
 }));

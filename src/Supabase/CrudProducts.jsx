@@ -82,16 +82,18 @@ export const AllReportStockProducts = async (params) => {
 
 export const ReportMinStockProducts = async (params) => {
   const { data, error } = await supabase.rpc("report_stock_product_min", params);
-
   if (error) return [];
-
   return data ?? [];
 };
 
 export const ReportKardexEntrysAndExits = async (params) => {
   const { data, error } = await supabase.rpc("add_company_kardex", params);
-
   if (error) return [];
+  return data ?? [];
+};
 
+export const ReportInventoryValued = async (params) => {
+  const { data, error } = await supabase.rpc("calculated_inventory", params);
+  if (error) return [];
   return data ?? [];
 };

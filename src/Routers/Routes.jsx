@@ -21,6 +21,7 @@ import AllStock from "../Components/Body/Reports/AllStock.jsx";
 import AllStockProduct from "../Components/Body/Reports/AllStockProduct.jsx";
 import MinStockProduct from "../Components/Body/Reports/MinStockProduct.jsx";
 import KardexEntryAndExit from "../Components/Body/Reports/KardexEntryAndExit.jsx";
+import InventoryValued from "../Components/Body/Reports/InventoryValued.jsx";
 
 export const MyRoutes = () => {
   const { user } = UserAuth();
@@ -74,6 +75,7 @@ export const MyRoutes = () => {
           <Route path="current-stock-product" element={<AllStockProduct />} />
           <Route path="min-stock" element={<MinStockProduct />} />
           <Route path="current-kardex" element={<KardexEntryAndExit />} />
+          <Route path="inventory-valued" element={<InventoryValued />} />
         </Route>
       </Route>
     </Routes>

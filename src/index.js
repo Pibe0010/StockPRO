@@ -89,3 +89,4 @@ export * from "./Components/Body/Reports/AllStock.jsx";
 export * from "./Components/Body/Reports/AllStockProduct.jsx";
 export * from "./Components/Body/Reports/MinStockProduct.jsx";
 export * from "./Components/Body/Reports/KardexEntryAndExit.jsx";
+export * from "./Components/Body/Reports/InventoryValued.jsx";
